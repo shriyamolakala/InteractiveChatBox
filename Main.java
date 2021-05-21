@@ -6,17 +6,29 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
+        userInfo();
+        printMessage();
+        System.out.println("Thank you for visiting the InteractiveChat, come back whenever you'd like!");
 
+    }
+
+    public static void userInfo() {
         Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Enter your name (enter 'Anon' if you don't want to enter your name): ");
+        System.out.println("Enter your name (enter 'Anon' if you want to be anonymous): ");
         String name = scanner.nextLine();
 
+        if (name.contains("anon") || name.contains("Anon")){
+            System.out.println("Hi, how have you been?");
+        } else {
+            System.out.println("Hi " + name + ", how have you been?");
+        }
+    }
 
-        System.out.println("Hi " + name + ", how have you been?");
+    public static void printMessage() {
+        Scanner scanner = new Scanner(System.in);
         String dayMessage = scanner.nextLine();
         dayMessage.toLowerCase(Locale.ROOT);
-        String[] negWords = {"terrible", "bad", "okay", "sad", "lazy", "worthless", "ugly", "failure"};
+        String[] negWords = {"terrible", "bad", "okay", "sad", "lazy", "worthless", "ugly", "failure", "not"};
         String[] posWords = {"great", "good", "wonderful", "happy"};
         int i = 0;
         boolean check = true;
@@ -49,11 +61,11 @@ public class Main {
                     break;
                 }
             }
-        }
 
-        System.out.println("Thank you for visiting the InteractiveChat, come back whenever you want to!");
+        }
         scanner.close();
     }
-
-
 }
+
+
+
