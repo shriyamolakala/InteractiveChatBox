@@ -14,13 +14,13 @@ public class Main {
 
     public static void userInfo() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter your name (enter 'Anon' if you want to be anonymous): ");
+        System.out.println("Enter your name (press enter to stay anonymous): ");
         String name = scanner.nextLine();
 
         if (name.contains("anon") || name.contains("Anon")){
             System.out.println("Hi, how have you been?");
         } else {
-            System.out.println("Hi " + name + ", how have you been?");
+            System.out.println("Hi" + name + ", how have you been?");
         }
     }
 
